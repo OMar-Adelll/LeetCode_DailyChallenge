@@ -32,8 +32,8 @@ public:
             int mnval = c - k;
             int mxval = c + k;
             
-            int l = lower_bound(all(nums), mnval) - numbers.begin();
-            int r = upper_bound(all(nums), mxval) - numbers.begin();
+            int l = lower_bound(all(nums), mnval) - nums.begin();
+            int r = upper_bound(all(nums), mxval) - nums.begin();
 
             if (r - l > 0)
             {
