@@ -12,35 +12,19 @@ using namespace std;
 #define updmin(a, x) (a = min((a), (x)))
 #define nl '\n'
 
-class Solution
-{
+class Solution {
 public:
-    bool hasSameDigits(string s)
-    {
-        auto valid = [&](string s) -> bool
-        {
-            for (int i = 1; i < sz(s); i++)
-                if (s[i] != s[i - 1])
-                    return 0;
-
-            return 1;
-        };
-
-        while (sz(s) > 2)
-        {
+    bool hasSameDigits(string s) {
+        while (sz(s) > 2) {
             string word = "";
-            for (int i = 1; i < sz(s); i++)
-            {
+            for (int i = 1; i < sz(s); i++) {
                 int x = s[i] - '0', y = s[i - 1] - '0';
                 int rs = (x + y) % 10;
                 word += to_string(rs);
             }
 
-            if (valid(word))
-                return 1;
-
             s = word;
         }
-        return 0;
+        return s[0] == s[1];
     }
 };
