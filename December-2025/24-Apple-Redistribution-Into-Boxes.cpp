@@ -33,3 +33,20 @@ public:
         return cap.size();
     }
 };
+
+
+
+
+// -- Python Solution -- //
+// class Solution:
+//     def minimumBoxes(self, apple: List[int], cap: List[int]) -> int:
+//         sum = 0
+//         for a in apple : sum += a
+//         cap.sort()
+//         capsum = 0
+//         for i in range(len(cap) - 1 , -1 , -1):
+//             capsum += cap[i]
+//             if capsum >= sum:
+//                 return len(cap) - i
+
+//         return len(cap)
