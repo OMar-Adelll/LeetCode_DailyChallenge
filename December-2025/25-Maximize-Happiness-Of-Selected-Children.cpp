@@ -25,3 +25,19 @@ public:
         return (long long)sum;
     }
 };
+
+
+
+
+
+//-- Python Solution --// 
+// class Solution:
+//     def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+//         sum, st = 0,0
+//         happiness.sort()
+//         for hap in reversed(happiness):
+//             if st == k : break
+//             sum += max(0, hap - st)
+//             st += 1
+
+//         return sum 
