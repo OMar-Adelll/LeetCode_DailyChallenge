@@ -23,19 +23,14 @@ public:
         vector<vector<int>> prefix(n, vector<int>(m));
         for (int j = 0; j < m; j++)
         {
-            int num = matrix[n - 1][j] - '0';
-            prefix[n - 1][j] = num;
+            int num = matrix[n - 1][j] - '0', prefix[n - 1][j] = num;
             for (int i = n - 2; i >= 0; i--)
             {
                 int x = matrix[i][j] - '0';
                 if (x == 1)
-                {
                     prefix[i][j] = x + prefix[i + 1][j];
-                }
                 else
-                {
                     prefix[i][j] = 0;
-                }
             }
         }
         int maxi = 0;
